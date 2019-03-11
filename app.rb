@@ -23,7 +23,7 @@ get '/accounts/new' do
 end
 
 post '/accounts/create' do
-  # Create user function
+  User.create(:user_name=>params[:user_name], :email=>params[:email], :password=>params[:password])
   redirect '/'
 end
 
