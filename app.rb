@@ -27,7 +27,7 @@ post '/accounts' do
   redirect '/'
 end
 
-get '/accounts/sign_in' do
+post '/accounts/sign_in' do
   #  check details
   # log-in suer
   redirect '/'
