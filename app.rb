@@ -15,14 +15,14 @@ class Makersbnb < Sinatra::Base
   end
 
 get '/' do
-  redirect '/accounts/new'
+  erb :'index'
 end
 
 get '/accounts/new' do
   erb :'users/signup'
 end
 
-post '/accounts/create' do
+post '/accounts' do
   User.create(:user_name=>params[:user_name], :email=>params[:email], :password=>params[:password])
   redirect '/'
 end
