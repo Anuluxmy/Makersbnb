@@ -117,10 +117,10 @@ Verb: confirm
 
 7b.
 ```
-As an owner
-So that I can maximize occupancy
-I want to be able to take multiple bookings on a space until confirmed
+As an guest
+So that I can have most options to book
+I want to place booking on space that have unconfirmed bookings
 ```
 Noun: user, booking, space
 
-Verb: confirm
+Verb: submit booking
