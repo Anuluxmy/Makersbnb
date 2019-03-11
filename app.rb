@@ -15,6 +15,7 @@ class Makersbnb < Sinatra::Base
   end
 
 get '/' do
+  @user = User.all(:id=> session[:id])
   erb :'index'
 end
 
@@ -24,10 +25,13 @@ end
 
 post '/accounts' do
   User.create(:user_name=>params[:user_name], :email=>params[:email], :password=>params[:password])
+  @user = User.all(:user_name=>params[:user_name], :email=>params[:email], :password=>params[:password]))
+  session[:id] = user.id
   redirect '/'
 end
 
 post '/accounts/sign_in' do
+
   #  check details
   # log-in suer
   redirect '/'
