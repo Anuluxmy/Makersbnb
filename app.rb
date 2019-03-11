@@ -27,5 +27,11 @@ post '/accounts' do
   redirect '/'
 end
 
+get '/accounts/sign_in' do
+  #  check details
+  # log-in suer
+  redirect '/'
+end
+
 run! if app_file == $0
 end
