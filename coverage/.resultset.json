@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/andrew/Makers/group-projects/Makersbnb/spec/features/check_homepage_is_up_spec.rb": [
+      "/Users/student/Documents/Week6_Group_Project/Makersbnb/spec/features/check_homepage_is_up_spec.rb": [
         1,
         1,
         1,
@@ -9,53 +9,8 @@
         null,
         null
       ],
-      "/Users/andrew/Makers/group-projects/Makersbnb/spec/features/create_account_spec.rb": [
+      "/Users/student/Documents/Week6_Group_Project/Makersbnb/spec/features/create_account_spec.rb": [
         null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/andrew/Makers/group-projects/Makersbnb/spec/features/logout_user_spec.rb": [
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/andrew/Makers/group-projects/Makersbnb/spec/features/signing_in_spec.rb": [
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
         null,
         1,
         1,
@@ -64,10 +19,39 @@
         null,
         null
       ],
-      "/Users/andrew/Makers/group-projects/Makersbnb/spec/user_spec.rb": [
+      "/Users/student/Documents/Week6_Group_Project/Makersbnb/spec/features/create_new_space_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/student/Documents/Week6_Group_Project/Makersbnb/spec/features/logout_user_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/student/Documents/Week6_Group_Project/Makersbnb/spec/features/signing_in_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/student/Documents/Week6_Group_Project/Makersbnb/spec/user_spec.rb": [
 
       ]
     },
-    "timestamp": 1552388473
+    "timestamp": 1552391593
   }
 }
