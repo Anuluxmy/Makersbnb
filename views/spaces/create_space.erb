@@ -1,0 +1,38 @@
+<h1> 'Please fill in this form' </h1>
+
+<form action="/spaces/create" method="post">
+  Space name: <input type="text" name="space_name" placeholder="your space here" required><br>
+  Description: <input type="text" name="description" placeholder="your description here" required><br>
+  Price per night: <input type="text" name="price_per_night" placeholder="price here" required><br>
+  From Day: <input type="text" name="from_day" placeholder="start date here" required><br>
+  From Month: <select name="from_month">
+        <option value = "01">January</option>
+        <option value = "02">February</option>
+        <option value = "03">March</option>
+        <option value = "04">April</option>
+        <option value = "05">May</option>
+        <option value = "06">June</option>
+        <option value = "07">July</option>
+        <option value = "08">August</option>
+        <option value = "09">September</option>
+        <option value = "10">October</option>
+        <option value = "11">November</option>
+        <option value = "12">December</option>
+        </select><br>
+  To Day: <input type="text" name="to_day" placeholder="end date here" required><br>
+  To Month: <select name="to_month">
+        <option value = "01">January</option>
+        <option value = "02">February</option>
+        <option value = "03">March</option>
+        <option value = "04">April</option>
+        <option value = "05">May</option>
+        <option value = "06">June</option>
+        <option value = "07">July</option>
+        <option value = "08">August</option>
+        <option value = "09">September</option>
+        <option value = "10">October</option>
+        <option value = "11">November</option>
+        <option value = "12">December</option>
+        </select><br>
+  <button type="submit">Submit</button>
+</form>

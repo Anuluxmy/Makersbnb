@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative './lib/user'
+require_relative './lib/space'
 require 'data_mapper'
 
 class Makersbnb < Sinatra::Base
@@ -47,6 +48,27 @@ end
 post '/accounts/logout' do
   session.clear
   redirect '/'
+end
+
+get '/spaces' do
+  @spaces = Space.all
+  erb :'spaces/list'
+end
+
+get '/spaces/create' do
+
+  erb :'spaces/create_space'
+end
+
+post '/spaces/create' do
+  @from_day = params[:from_day]
+  @from_month = params[:from_month]
+  @from_date = Date.new(2019,@from_month.to_i,@from_day.to_i)
+  @to_day = params[:to_day]
+  @to_month = params[:to_month]
+  @to_date = Date.new(2019,@to_month.to_i,@to_day.to_i)
+  Space.create(:name=>params[:space_name], :description=>params[:description], :price_per_night=>params[:price_per_night].to_i, :available_from=>@from_date, :available_to=>@to_date, :user_id => session[:id])
+  redirect '/spaces'
 end
 
 run! if app_file == $0

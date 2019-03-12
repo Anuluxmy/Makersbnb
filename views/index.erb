@@ -9,6 +9,9 @@
 
     <% if !@user.nil? %>
       <p>Hello, <%= @user.user_name %></p>
+      <form action ="/spaces" method="get">
+        <button type="submit">List of Spaces</button>
+      </form>
       <form action ="/accounts/logout" method="post">
         <button type="submit">Log Out</button>
       </form>

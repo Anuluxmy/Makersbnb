@@ -1,0 +1,20 @@
+<form action ="/spaces/create" method="get">
+  <button type="submit">Create Space</button>
+</form>
+
+Here are the available spaces<br>
+
+<% if @spaces.empty?%>
+No Spaces Available
+<% else %>
+<ul>
+  <% @spaces.each do |space| %>
+    <style> div {border-style: solid;}</style>
+    <div {border-style: solid;}><h2>Owner: <%= space.user.user_name %> Space Name: <%= space.name %> Price Per Night: £<%= space.price_per_night.to_s %></h2>
+    <h2><%= space.description %></h2>
+    <h2>Available Dates: <%= space.available_from %>-<%= space.available_to %></h2>
+    <h2>Book</h2>
+    </div><br>
+    <% end %>
+</ul>
+<% end %>
