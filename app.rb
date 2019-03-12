@@ -51,9 +51,7 @@ post '/accounts/logout' do
 end
 
 get '/spaces' do
-  @space = Space.all
-  # p "space: #{@space}"
-  #get all spaces from database
+  @spaces = Space.all
   erb :'spaces/list'
 end
 

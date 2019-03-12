@@ -14,3 +14,16 @@ def sign_in
   fill_in :password, with: '123456'
   click_button 'Sign In'
 end
+
+def create_space
+  click_button('List of Spaces')
+  click_button('Create Space')
+  fill_in :space_name, with: 'test space'
+  fill_in :description, with: 'test description'
+  fill_in :price_per_night, with: '700'
+  fill_in :from_day, with: '1'
+  page.select('January', :from => 'from_month')
+  fill_in :to_day, with: '10'
+  page.select('January', :from => 'to_month')
+  click_button('Submit')
+end
