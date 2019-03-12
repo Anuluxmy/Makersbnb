@@ -9,6 +9,6 @@ feature 'allows user to sign up' do
     fill_in :password, with: 'password'
     fill_in :password_confirm, with: 'password'
     click_button('Create Account')
-    expect(page).to have_current_path('/')
+    expect(page).to have_content 'Hello, username'
   end  
 end 
