@@ -50,5 +50,19 @@ post '/accounts/logout' do
   redirect '/'
 end
 
+get '/spaces' do
+  #get all spaces from database
+  erb :'spaces/list'
+end
+
+get '/spaces/create' do
+  erb :'spaces/create_space'
+end
+
+post '/spaces/create' do
+  #create space in database
+  redirect '/spaces'
+end
+
 run! if app_file == $0
 end
