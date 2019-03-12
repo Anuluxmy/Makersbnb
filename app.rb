@@ -4,6 +4,8 @@ require 'data_mapper'
 
 class Makersbnb < Sinatra::Base
 
+  enable :sessions
+
   if ENV['RACK_ENV'] == 'test'
     DataMapper.setup(:default, 'postgres://user@127.0.0.1:5432/makersbnb_test')
     DataMapper.finalize
@@ -15,7 +17,9 @@ class Makersbnb < Sinatra::Base
   end
 
 get '/' do
-  @user = User.all(:id=> session[:id])
+  if !session[:id].nil?
+    @user = User.get(session[:id])
+  end
   erb :'index'
 end
 
@@ -25,15 +29,18 @@ end
 
 post '/accounts' do
   User.create(:user_name=>params[:user_name], :email=>params[:email], :password=>params[:password])
-  @user = User.all(:user_name=>params[:user_name], :email=>params[:email], :password=>params[:password])
-  session[:id] = user.id
+  @user = User.last(:user_name=>params[:user_name], :email=>params[:email], :password=>params[:password])
+  session[:id] = @user.id
   redirect '/'
 end
 
 post '/accounts/sign_in' do
-
-  #  check details
-  # log-in suer
+  @user = User.last(:user_name=>params[:user_name], :password=>params[:password])
+  if !@user.nil?
+    session[:id] = @user.id
+  else
+    # flash message of error
+  end
   redirect '/'
 end
 

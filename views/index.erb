@@ -7,7 +7,9 @@
 
     <h1>Welcome to Makers BnB</h1>
 
-    <p>hello, testuser</p>
+    <% if @user %>
+      <p>Hello, <%= @user.user_name %></p>
+    <% end %>
 
     <form action="/accounts/new" method="get">
       <button type="submit">Sign Up</button>
