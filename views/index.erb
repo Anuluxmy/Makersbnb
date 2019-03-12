@@ -9,7 +9,7 @@
 
     <% if !@user.nil? %>
       <p>Hello, <%= @user.user_name %></p>
-      <form action ="/accounts/logout">
+      <form action ="/accounts/logout" method="post">
         <button type="submit">Log Out</button>
       </form>
     <% else %>
