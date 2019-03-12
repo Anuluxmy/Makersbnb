@@ -9,7 +9,8 @@ class Space
   property :price_per_night, Integer
   property :available_from, Date
   property :available_to, Date
-  
+
   belongs_to :user
+  has n, :bookings
 
 end
