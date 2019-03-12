@@ -7,5 +7,6 @@ class User
   property :user_name,      String    # A varchar type string, for short strings
   property :email,    String    # A varchar type string, for short strings
   property :password, String  # A varchar type string, for short strings
-
+  
+  has n, :spaces
   end
