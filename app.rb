@@ -51,15 +51,20 @@ post '/accounts/logout' do
 end
 
 get '/spaces' do
+  @space = Space.all
+  # p "space: #{@space}"
   #get all spaces from database
   erb :'spaces/list'
 end
 
 get '/spaces/create' do
+
   erb :'spaces/create_space'
 end
 
 post '/spaces/create' do
+  Space.create(:name=>params[:name], :description=>params[:description], :price_per_night=>params[:price_per_night], :avilable_from=>params[:available_from], :available_to=>params[:available_to])
+
   #create space in database
   redirect '/spaces'
 end
