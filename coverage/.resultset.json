@@ -1,7 +1,11 @@
 {
   "RSpec": {
     "coverage": {
+<<<<<<< HEAD
+      "/Users/student/Documents/Week6_Group_Project/Makersbnb/spec/features/check_homepage_is_up_spec.rb": [
+=======
       "/Users/anu/Projects/Makersbnb/spec/features/check_homepage_is_up_spec.rb": [
+>>>>>>> 3ac255a2138b8546c0b82acfa1ae1b25aa3fca31
         1,
         1,
         1,
@@ -9,15 +13,13 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/Users/student/Documents/Week6_Group_Project/Makersbnb/spec/features/create_account_spec.rb": [
+=======
       "/Users/anu/Projects/Makersbnb/spec/features/create_account_spec.rb": [
+>>>>>>> 3ac255a2138b8546c0b82acfa1ae1b25aa3fca31
         null,
         null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -25,38 +27,36 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/Users/student/Documents/Week6_Group_Project/Makersbnb/spec/features/create_new_space_spec.rb": [
+=======
       "/Users/anu/Projects/Makersbnb/spec/features/logout_user_spec.rb": [
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
+>>>>>>> 3ac255a2138b8546c0b82acfa1ae1b25aa3fca31
         1,
         1,
         1,
         1,
         1,
-        null,
         1,
-        null,
+        1,
         null,
         null
       ],
+<<<<<<< HEAD
+      "/Users/student/Documents/Week6_Group_Project/Makersbnb/spec/features/logout_user_spec.rb": [
+=======
       "/Users/anu/Projects/Makersbnb/spec/features/signing_in_spec.rb": [
+>>>>>>> 3ac255a2138b8546c0b82acfa1ae1b25aa3fca31
         1,
         1,
         1,
         1,
         null,
-        1,
-        1,
-        1,
-        1,
-        1,
         null,
+        null
+      ],
+      "/Users/student/Documents/Week6_Group_Project/Makersbnb/spec/features/signing_in_spec.rb": [
         1,
-        null,
         1,
         1,
         1,
@@ -64,6 +64,13 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/Users/student/Documents/Week6_Group_Project/Makersbnb/spec/user_spec.rb": [
+
+      ]
+    },
+    "timestamp": 1552391593
+=======
       "/Users/anu/Projects/Makersbnb/spec/space_spec.rb": [
         null
       ],
@@ -71,6 +78,11 @@
 
       ]
     },
+<<<<<<< HEAD
     "timestamp": 1552393027
+=======
+    "timestamp": 1552389637
+>>>>>>> 3ac255a2138b8546c0b82acfa1ae1b25aa3fca31
+>>>>>>> 51b969646146e0bf7b8ee41d3f9fc5ca4868af28
   }
 }
