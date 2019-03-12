@@ -1,5 +1,6 @@
-feature 'Signing-in' do
-  scenario 'signs in and shows username at top of index page' do
+feature 'Logging out' do
+  scenario 'displays the homepage with no Hello, [username] message present' do
+
     visit '/'
     click_button('Sign Up')
 
@@ -11,9 +12,5 @@ feature 'Signing-in' do
 
     click_button 'Log Out'
 
-    fill_in :user_name, with: 'testuser'
-    fill_in :password, with: '123456'
-    click_button 'Sign In'
-    expect(page).to have_content 'Hello, testuser'
   end
 end

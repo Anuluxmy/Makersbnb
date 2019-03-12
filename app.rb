@@ -44,5 +44,10 @@ post '/accounts/sign_in' do
   redirect '/'
 end
 
+get '/accounts/logout' do
+  session.clear
+  redirect '/'
+end
+
 run! if app_file == $0
 end
