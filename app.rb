@@ -71,5 +71,32 @@ post '/spaces/create' do
   redirect '/spaces'
 end
 
+get '/bookings' do
+  # guest
+  #erb : bookings
+end
+
+get '/bookings/create' do
+  # guest
+  #erb : bookings_create
+end
+
+post '/bookings/create' do
+  # guest
+  #database create booking
+  #redirect '/bookings'
+end
+
+get '/approvals' do
+   # owner
+  #erb : approvals
+end
+
+post '/approvals/update' do
+  # owner
+  #database update booking
+  #redirect '/approvals'
+end
+
 run! if app_file == $0
 end
