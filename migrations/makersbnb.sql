@@ -1,0 +1,3 @@
+ CREATE DATABASE makersbnb;
+ CREATE USER "user" WITH SUPERUSER;
+ CREATE DATABASE makersbnb_test;
