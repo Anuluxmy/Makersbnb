@@ -82,7 +82,8 @@ end
 get '/bookings/create' do
   # guest
   # database get space where spaceid = params space id
-  #Space.get(:id=>params[:space_id])
+  # @space = Space.get(:id=>params[:space_id])
+  # @space_bookings = Booking.all(:space_id => @space.id, :date.gt => Date.now, :status => :approved)  
   #erb : bookings_create
 end
 
