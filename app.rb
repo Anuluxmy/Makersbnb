@@ -74,11 +74,13 @@ end
 
 get '/bookings' do
   # guest
+  # database get all bookings for session user id
   #erb : bookings
 end
 
 get '/bookings/create' do
   # guest
+  # database get space where spaceid = params space id
   #erb : bookings_create
 end
 
@@ -90,6 +92,7 @@ end
 
 get '/approvals' do
    # owner
+   # database get all bookings where space userid = session id
   #erb : approvals
 end
 
