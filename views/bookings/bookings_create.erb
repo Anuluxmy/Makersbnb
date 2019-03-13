@@ -1,8 +1,9 @@
 <h1> Select preferred dates </h1>
 
 <form action="/bookings/create" method="post">
-  From Day: <input type="text" name="from_day_guest" placeholder="start date here" required><br>
-  From Month: <select name="from_month_guest">
+  <!-- @space.name  -->
+  From Day: <input type="text" name="day_guest" placeholder="start date here" required><br>
+  From Month: <select name="month_guest">
         <option value = "01">January</option>
         <option value = "02">February</option>
         <option value = "03">March</option>
@@ -16,8 +17,8 @@
         <option value = "11">November</option>
         <option value = "12">December</option>
         </select><br>
-  To Day: <input type="text" name="to_day_guest" placeholder="end date here" required><br>
-  To Month: <select name="to_month_guest">
+  <!-- To Day: <input type="text" name="to_day_guest" placeholder="end date here" required><br> -->
+  <!-- To Month: <select name="to_month_guest">
         <option value = "01">January</option>
         <option value = "02">February</option>
         <option value = "03">March</option>
@@ -30,6 +31,7 @@
         <option value = "10">October</option>
         <option value = "11">November</option>
         <option value = "12">December</option>
-        </select><br>
+        </select><br> -->
+      <input type="hidden" value= "<%= @space.id %>" name = "space_id"></input>    
   <button type="submit">Submit</button>
 </form>

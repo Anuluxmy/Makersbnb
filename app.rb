@@ -84,22 +84,20 @@ get '/bookings/create' do
 
   # guest
   # database get space where spaceid = params space id
-  #Space.get(:id=>params[:space_id])
+  @space = Space.get(params[:space_id])
   erb :'bookings/bookings_create'
 end
 
 post '/bookings/create' do
-  @from_day = params[:from_day_guest]
-  @from_month = params[:from_month_guest]
+  @from_day = params[:day_guest]
+  @from_month = params[:month_guest]
   @from_date = Date.new(2019,@from_month.to_i,@from_day.to_i)
-  @to_day = params[:to_day_guest]
-  @to_month = params[:to_month_guest]
-  @to_date = Date.new(2019,@to_month.to_i,@to_day.to_i)
-  redirect '/bookings'
+
   # guest
   #database create booking
-  #Booking.create(:date=>params[?????],:status=>:new, :user_id=>session[:id], :space_id=>params[????])
+  Booking.create(:date=>@from_date,:status=>:new, :user_id=>session[:id], :space_id=>params[:space_id])
   #redirect '/bookings'
+  redirect '/bookings'
 end
 
 get '/approvals' do

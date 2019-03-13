@@ -24,10 +24,9 @@ feature 'creates a booking' do
     click_button('List of Spaces')
     click_button('Book test space')
     expect(page).to have_content('Select preferred dates')
-    fill_in :from_day_guest, with: '2'
-    page.select('January', :from => 'from_month_guest')
-    fill_in :to_day_guest, with: '7'
-    page.select('January', :from => 'to_month_guest')
+    fill_in :day_guest, with: '2'
+    page.select('January', :from => 'month_guest')
+
   end
 
 end
