@@ -72,12 +72,12 @@ post '/spaces/create' do
   redirect '/spaces'
 end
 
-post '/bookings' do
+get '/bookings' do
 
   # guest
   # database get all bookings for session user id
-  #Booking.all(:user_id => session[:id])
-  #erb : bookings
+  @booking_requests = Booking.all(:user_id => session[:id])
+  erb :'bookings/bookings_list'
 end
 
 get '/bookings/create' do
