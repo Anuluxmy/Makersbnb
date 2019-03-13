@@ -13,12 +13,21 @@ feature 'creates a booking' do
     #update and complete test
   end
 
-  # scenario 'Guest can make a booking' do
-  #   guest_sign_up
-  #   guest_sign_in
-  #   click_button('List of Spaces')
-  #   # click_button('Book')
-  #   expect(page).to have_content('Enter the dates')
-  # end
+  scenario 'Guest can make a booking' do
+    sign_up
+    sign_in
+    create_space
+    visit('/')
+    click_button 'Log Out'
+    guest_sign_up
+    guest_sign_in
+    click_button('List of Spaces')
+    click_button('Book test space')
+    expect(page).to have_content('Select preferred dates')
+    fill_in :from_day_guest, with: '2'
+    page.select('January', :from => 'from_month_guest')
+    fill_in :to_day_guest, with: '7'
+    page.select('January', :from => 'to_month_guest')
+  end
 
 end
