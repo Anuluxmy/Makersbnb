@@ -27,3 +27,20 @@ def create_space
   page.select('January', :from => 'to_month')
   click_button('Submit')
 end
+
+def guest_sign_up
+  visit '/'
+  click_button('Sign Up')
+  fill_in :user_name, with: 'guesttestuser'
+  fill_in :email, with: 'guestname@email.com'
+  fill_in :password, with: '123456'
+  fill_in :password_confirm, with: '123456'
+  click_button('Create Account')
+  end
+
+  def guest_sign_in
+    click_button 'Log Out'
+    fill_in :user_name, with: 'guesttestuser'
+    fill_in :password, with: '123456'
+    click_button 'Sign In'
+  end

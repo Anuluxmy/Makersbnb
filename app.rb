@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative './lib/user'
 require_relative './lib/space'
+require_relative './lib/booking'
 require 'data_mapper'
 
 class Makersbnb < Sinatra::Base
@@ -69,6 +70,49 @@ post '/spaces/create' do
   @to_date = Date.new(2019,@to_month.to_i,@to_day.to_i)
   Space.create(:name=>params[:space_name], :description=>params[:description], :price_per_night=>params[:price_per_night].to_i, :available_from=>@from_date, :available_to=>@to_date, :user_id => session[:id])
   redirect '/spaces'
+end
+
+get '/bookings' do
+
+  # guest
+  # database get all bookings for session user id
+  @booking_requests = Booking.all(:user_id => session[:id])
+  erb :'bookings/bookings_list'
+end
+
+get '/bookings/create' do
+
+  # guest
+  # database get space where spaceid = params space id
+  @space = Space.get(params[:space_id])
+  erb :'bookings/bookings_create'
+end
+
+post '/bookings/create' do
+  @from_day = params[:day_guest]
+  @from_month = params[:month_guest]
+  @from_date = Date.new(2019,@from_month.to_i,@from_day.to_i)
+
+  # guest
+  #database create booking
+  Booking.create(:date=>@from_date,:status=>:new, :user_id=>session[:id], :space_id=>params[:space_id])
+  #redirect '/bookings'
+  redirect '/bookings'
+end
+
+get '/approvals' do
+   # owner
+   # database get all bookings where space userid = session id
+   #Booking.all(:space_id.user_id=>session[:id])
+  #erb : approvals
+end
+
+post '/approvals/update' do
+  # owner
+  #database update booking
+  #booking = Booking.get(:id=>params[:booking_id])
+  #booking.update(:status=>params[:status])
+  #redirect '/approvals'
 end
 
 run! if app_file == $0
