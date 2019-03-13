@@ -26,7 +26,7 @@ feature 'creates a booking' do
     expect(page).to have_content('Select preferred dates')
     fill_in :day_guest, with: '2'
     page.select('January', :from => 'month_guest')
-
+    
   end
 
 end
