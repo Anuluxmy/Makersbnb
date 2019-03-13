@@ -104,7 +104,7 @@ get '/approvals' do
    # owner
    # database get all bookings where space userid = session id
    #Booking.all(:space_id.user_id=>session[:id])
-  #erb : approvals
+  erb :'approvals'
 end
 
 post '/approvals/update' do
