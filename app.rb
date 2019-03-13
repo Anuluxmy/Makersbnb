@@ -103,7 +103,7 @@ end
 get '/approvals' do
    # owner
    # database get all bookings where space userid = session id
-   #Booking.all(:space_id.user_id=>session[:id])
+   @approvals = Booking.all(Booking.space.user_id=>session[:id])
   erb :'approvals'
 end
 
