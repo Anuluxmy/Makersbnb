@@ -75,30 +75,36 @@ end
 get '/bookings' do
   # guest
   # database get all bookings for session user id
+  #Booking.all(:user_id => session[:id])
   #erb : bookings
 end
 
 get '/bookings/create' do
   # guest
   # database get space where spaceid = params space id
+  #Space.get(:id=>params[:space_id])
   #erb : bookings_create
 end
 
 post '/bookings/create' do
   # guest
   #database create booking
+  #Booking.create(:date=>params[?????],:status=>:new, :user_id=>session[:id], :space_id=>params[????])
   #redirect '/bookings'
 end
 
 get '/approvals' do
    # owner
    # database get all bookings where space userid = session id
+   #Booking.all(:space_id.user_id=>session[:id])
   #erb : approvals
 end
 
 post '/approvals/update' do
   # owner
   #database update booking
+  #booking = Booking.get(:id=>params[:booking_id])
+  #booking.update(:status=>params[:status])
   #redirect '/approvals'
 end
 
