@@ -1,5 +1,5 @@
 feature 'creates a booking' do
-  scenario 'A signed in user can see a list of booking' do
+  scenario 'A signed in user can see a list of spaces' do
     sign_up
     sign_in
     create_space
@@ -9,8 +9,6 @@ feature 'creates a booking' do
     guest_sign_in
     click_button('List of Spaces')
     expect(page).to have_content('test space')
-    # click_button('Book test space')
-    #update and complete test
   end
 
   scenario 'Guest can make a booking' do
@@ -26,7 +24,8 @@ feature 'creates a booking' do
     expect(page).to have_content('Select preferred dates')
     fill_in :day_guest, with: '2'
     page.select('January', :from => 'month_guest')
-
+    click_button('Submit')
+    expect(page).to have_content('new')
   end
 
 end
