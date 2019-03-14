@@ -11,7 +11,14 @@ No Approvals
     <div {border-style: solid;}><h2>Guest: <%= approval.user.user_name %> Space Name: <%= approval.space.name %> Price Per Night: £<%= approval.space.price_per_night.to_s %> Date: <%= approval.date %></h2>
     <h2><%= approval.space.description %></h2>
     <h2>Available Dates: <%= approval.space.available_from %>-<%= approval.space.available_to %></h2>
-    <h1><%= approval.status %></h1>
+    <h1>Status: <%= approval.status %></h1>
+    <% if approval.status != :approved %>
+    <form action="/approvals/update" method="post">
+      <input type="hidden" value="<%= approval.id %>" name="booking_id">
+      <input type="hidden" value="approved" name="status">
+      <button>Approve Now</button>
+    </form>
+    <% end %>
     </div><br>
     <% end %>
 </ul>

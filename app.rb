@@ -110,9 +110,9 @@ end
 post '/approvals/update' do
   # owner
   #database update booking
-  #booking = Booking.get(:id=>params[:booking_id])
-  #booking.update(:status=>params[:status])
-  #redirect '/approvals'
+  booking = Booking.get(params[:booking_id])
+  booking.update(:status=>params[:status])
+  redirect '/approvals'
 end
 
 run! if app_file == $0
