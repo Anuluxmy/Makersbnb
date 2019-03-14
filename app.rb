@@ -103,16 +103,16 @@ end
 get '/approvals' do
    # owner
    # database get all bookings where space userid = session id
-   #Booking.all(:space_id.user_id=>session[:id])
-  #erb : approvals
+   @approvals = Booking.all(Booking.space.user_id=>session[:id])
+  erb :'approvals'
 end
 
 post '/approvals/update' do
   # owner
   #database update booking
-  #booking = Booking.get(:id=>params[:booking_id])
-  #booking.update(:status=>params[:status])
-  #redirect '/approvals'
+  booking = Booking.get(params[:booking_id])
+  booking.update(:status=>params[:status])
+  redirect '/approvals'
 end
 
 run! if app_file == $0
