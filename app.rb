@@ -44,7 +44,7 @@ class Makersbnb < Sinatra::Base
   #  accounts
 
   get '/accounts/new' do
-    erb :'users/signup'
+    erb :'users/new'
   end
 
   post '/accounts' do
