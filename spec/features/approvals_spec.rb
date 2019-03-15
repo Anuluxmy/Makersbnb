@@ -6,8 +6,7 @@ scenario 'A user can navigate from home to approvals' do
   visit('/')
   click_button('List of Spaces')
   click_button('Book test space')
-  fill_in :day_guest, with: '2'
-  page.select('January', :from => 'month_guest')
+  fill_in :selected_date, with: '10/3/2019'
   click_button('Submit')
   click_button('Home')
   click_button('Approvals')
@@ -21,8 +20,7 @@ end
     visit('/')
     click_button('List of Spaces')
     click_button('Book test space')
-    fill_in :day_guest, with: '2'
-    page.select('January', :from => 'month_guest')
+    fill_in :selected_date, with: '10/3/2019'
     click_button('Submit')
     click_button('Home')
     click_button('Approvals')

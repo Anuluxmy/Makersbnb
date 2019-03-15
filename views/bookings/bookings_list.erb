@@ -10,7 +10,8 @@ No Bookings Made Yet
     <style> div {border-style: solid;}</style>
     <div {border-style: solid;}><h2>Guest: <%= request.user.user_name %> Space Name: <%= request.space.name %> Price Per Night: £<%= request.space.price_per_night.to_s %></h2>
     <h2><%= request.space.description %></h2>
-    <h2>Available Dates: <%= request.space.available_from %>-<%= request.space.available_to %></h2>
+    <h2>Available Dates: <%= request.space.available_from %> to <%= request.space.available_to %></h2>
+    <h2>Requested Date: <%= request.date %>
     <h1>Status: <%= request.status %></h1>
     </div><br>
     <% end %>
