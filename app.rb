@@ -22,15 +22,14 @@ class Makersbnb < Sinatra::Base
 
   get '/spaces' do
     @spaces = Space.all
-    erb :'spaces/list'
+    erb :'spaces/index'
   end
   
-  get '/spaces/create' do
-  
-    erb :'spaces/create_space'
+  get '/spaces/new' do
+    erb :'spaces/new'
   end
   
-  post '/spaces/create' do
+  post '/spaces' do
     @from_day = params[:from_day]
     @from_month = params[:from_month]
     @from_date = Date.new(2019,@from_month.to_i,@from_day.to_i)
