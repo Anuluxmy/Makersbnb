@@ -1,3 +1,19 @@
+<html>
+  <head>
+  <style>
+
+     button:hover  {
+
+          background-color: #D3D3D3;
+     }
+     img {
+          position: relative;
+          float: right;
+     }
+
+    </style>
+  </head>
+  <body>
 <form action ="/" method="get">
   <button type="submit">Home</button>
 </form>
@@ -5,15 +21,17 @@
   <button type="submit">Create Space</button>
 </form>
 
-Here are the available spaces<br>
+<h1><center><u>Here are the available spaces</u></center></h1>
 
 <% if @spaces.empty?%>
 No Spaces Available
 <% else %>
 <ul>
   <% @spaces.each do |space| %>
-    <style> div {border-style: solid;}</style>
-    <div {border-style: solid;}><h2>Owner: <%= space.user.user_name %> Space Name: <%= space.name %> Price Per Night: £<%= space.price_per_night.to_s %></h2>
+  <div class="spaces">
+    <img alt="IMG" src="/img5.jpg" style="width:25%;height:25%"><br>
+
+    <h2>Owner: <%= space.user.user_name %> Space Name: <%= space.name %> Price Per Night: £<%= space.price_per_night.to_s %></h2>
     <h2><%= space.description %></h2>
     <h2>Available Dates: <%= space.available_from %>-<%= space.available_to %></h2>
 
@@ -27,3 +45,5 @@ No Spaces Available
     <% end %>
 </ul>
 <% end %>
+</body>
+</html>

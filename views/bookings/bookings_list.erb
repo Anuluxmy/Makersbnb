@@ -1,13 +1,33 @@
-<h1>Bookings List</h1>
+<html>
+  <head>
+  <style>
+
+     button:hover  {
+
+          background-color: #D3D3D3;
+     }
+     img {
+          position: relative;
+          float: right;
+          margin-top: 22px;
+     }
+
+    </style>
+  </head>
+<body>
+
+<h1><center>Bookings List</center></h1>
 <form action ="/" method="get">
   <button type="submit">Home</button>
 </form>
 <% if @booking_requests.empty?%>
 No Bookings Made Yet
+  <img alt="IMG" src="/img7.jpeg" style="width:100%;"><br>
 <% else %>
 <ul>
   <% @booking_requests.each do |request| %>
     <style> div {border-style: solid;}</style>
+    <img alt="IMG" src="/img5.jpg" style="width:27%;height:27%"><br>
     <div {border-style: solid;}><h2>Guest: <%= request.user.user_name %> Space Name: <%= request.space.name %> Price Per Night: £<%= request.space.price_per_night.to_s %></h2>
     <h2><%= request.space.description %></h2>
     <h2>Available Dates: <%= request.space.available_from %> to <%= request.space.available_to %></h2>
@@ -17,3 +37,4 @@ No Bookings Made Yet
     <% end %>
 </ul>
 <% end %>
+</body>

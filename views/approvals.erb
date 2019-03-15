@@ -1,3 +1,30 @@
+<html>
+  <head>
+
+  <style>
+    .container {
+      position: relative;
+      text-align: center;
+
+    }
+    .centered {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgb(0, 0, 0); /* Fallback color */
+      background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+      color: #f1f1f1;
+
+    }
+    </style>
+  </head>
+  <body>
+
+<div class="container">
+  <img alt="IMG" src="/img2.jpg" style="width:100%;"><br>
+  <div class="centered">
+
 <h1>Approvals List</h1>
 <form action ="/" method="get">
   <button type="submit">Home</button>
@@ -8,6 +35,7 @@ No Approvals
 <ul>
   <% @approvals.each do |approval| %>
     <style> div {border-style: solid;}</style>
+    <img alt="IMG" src="/img5.jpg" style="width:100%;"><br>
     <div {border-style: solid;}><h2>Guest: <%= approval.user.user_name %> Space Name: <%= approval.space.name %> Price Per Night: £<%= approval.space.price_per_night.to_s %></h2>
     <h2><%= approval.space.description %></h2>
     <h2>Available Dates: <%= approval.space.available_from %> to <%= approval.space.available_to %></h2>
@@ -24,3 +52,6 @@ No Approvals
     <% end %>
 </ul>
 <% end %>
+</div>
+</div>
+</body>

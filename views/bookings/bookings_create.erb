@@ -3,13 +3,13 @@
 
 
 <form action="/bookings/create" method="post">
-  
+
   <% if ENV['RACK_ENV'] == 'test' %>
   Select a date:  <input type="text" name="selected_date" id="datePicker" placeholder="click here to select a date" style="border: 1px solid black;">
   <% else %>
   Select a date:  <input type="text" name="selected_date" id="datePicker" placeholder="click here to select a date" readonly style="border: 1px solid black;">
   <% end %>
-  
+
       <input type="hidden" value= "<%= @space.id %>" name = "space_id"></input>
   <button type="submit">Submit</button>
 </form>
