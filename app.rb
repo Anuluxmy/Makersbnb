@@ -31,15 +31,20 @@ end
 
 post '/accounts' do
   User.create(:user_name=>params[:user_name], :email=>params[:email], :password=>params[:password])
-  @user = User.last(:user_name=>params[:user_name], :email=>params[:email], :password=>params[:password])
+  @user = User.last(:user_name=>params[:user_name], :email=>params[:email])
   session[:id] = @user.id
   redirect '/'
 end
 
 post '/accounts/sign_in' do
-  @user = User.last(:user_name=>params[:user_name], :password=>params[:password])
+  @user = User.last(:user_name=>params[:user_name])
   if !@user.nil?
-    session[:id] = @user.id
+    if @user.password == params[:password]
+      session[:id] = @user.id
+      redirect '/'
+    else
+      redirect '/'
+    end
   else
     # flash message of error
   end
@@ -85,14 +90,20 @@ get '/bookings/create' do
   # guest
   # database get space where spaceid = params space id
   @space = Space.get(params[:space_id])
+  @bookings = Booking.all(:status=>:approved, :space_id=>@space.id)
+  @unavailable_dates = []
+  @bookings.each do |booking|
+    @unavailable_dates.push(booking.date.to_s)
+  end
   erb :'bookings/bookings_create'
 end
 
 post '/bookings/create' do
-  @from_day = params[:day_guest]
-  @from_month = params[:month_guest]
-  @from_date = Date.new(2019,@from_month.to_i,@from_day.to_i)
-
+  # @from_day = params[:day_guest]
+  # @from_month = params[:month_guest]
+  # @from_date = Date.new(2019,@from_month.to_i,@from_day.to_i)
+  selected_date = params[:selected_date].split('/')
+  @from_date = Date.new(selected_date[2].to_i,selected_date[1].to_i,selected_date[0].to_i)
   # guest
   #database create booking
   Booking.create(:date=>@from_date,:status=>:new, :user_id=>session[:id], :space_id=>params[:space_id])
