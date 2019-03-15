@@ -31,15 +31,20 @@ end
 
 post '/accounts' do
   User.create(:user_name=>params[:user_name], :email=>params[:email], :password=>params[:password])
-  @user = User.last(:user_name=>params[:user_name], :email=>params[:email], :password=>params[:password])
+  @user = User.last(:user_name=>params[:user_name], :email=>params[:email])
   session[:id] = @user.id
   redirect '/'
 end
 
 post '/accounts/sign_in' do
-  @user = User.last(:user_name=>params[:user_name], :password=>params[:password])
+  @user = User.last(:user_name=>params[:user_name])
   if !@user.nil?
-    session[:id] = @user.id
+    if @user.password == params[:password]
+      session[:id] = @user.id
+      redirect '/'
+    else
+      redirect '/'
+    end
   else
     # flash message of error
   end
