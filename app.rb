@@ -77,36 +77,24 @@ class Makersbnb < Sinatra::Base
   #  bookings
 
   get '/bookings' do
-
-    # guest
-    # database get all bookings for session user id
     @booking_requests = Booking.all(:user_id => session[:id])
     erb :'bookings/bookings_list'
   end
   
-  get '/bookings/create' do
-  
-    # guest
-    # database get space where spaceid = params space id
+  get '/spaces/:space_id/bookings/new' do
     @space = Space.get(params[:space_id])
     @bookings = Booking.all(:status=>:approved, :space_id=>@space.id)
     @unavailable_dates = []
     @bookings.each do |booking|
       @unavailable_dates.push(booking.date.to_s)
     end
-    erb :'bookings/bookings_create'
+    erb :'bookings/new'
   end
   
-  post '/bookings/create' do
-    # @from_day = params[:day_guest]
-    # @from_month = params[:month_guest]
-    # @from_date = Date.new(2019,@from_month.to_i,@from_day.to_i)
+  post '/spaces/:space_id/bookings' do
     selected_date = params[:selected_date].split('/')
     @from_date = Date.new(selected_date[2].to_i,selected_date[1].to_i,selected_date[0].to_i)
-    # guest
-    #database create booking
     Booking.create(:date=>@from_date,:status=>:new, :user_id=>session[:id], :space_id=>params[:space_id])
-    #redirect '/bookings'
     redirect '/bookings'
   end
 

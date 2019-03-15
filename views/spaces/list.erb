@@ -35,10 +35,7 @@ No Spaces Available
     <h2><%= space.description %></h2>
     <h2>Available Dates: <%= space.available_from %>-<%= space.available_to %></h2>
 
-    <form action ="/bookings/create" method="get">
-
-    <!-- spaceID -->
-    <input type="hidden" value= "<%= space.id %>" name = "space_id"></input>
+    <form action ="/spaces/<%= space.id %>/bookings/new" method="get">
       <button type="submit">Book <%= space.name %> </button>
     </form>
     </div><br>

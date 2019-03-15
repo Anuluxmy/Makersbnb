@@ -2,7 +2,7 @@
 
 
 
-<form action="/bookings/create" method="post">
+<form action="/spaces/<%= @space.id %>/bookings" method="post">
 
   <% if ENV['RACK_ENV'] == 'test' %>
   Select a date:  <input type="text" name="selected_date" id="datePicker" placeholder="click here to select a date" style="border: 1px solid black;">
