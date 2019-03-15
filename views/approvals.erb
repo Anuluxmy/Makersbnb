@@ -42,8 +42,7 @@ No Approvals
     <h2>Requested Date: <%= approval.date %></h2>
     <h1>Status: <%= approval.status %></h1>
     <% if approval.status != :approved %>
-    <form action="/approvals/update" method="post">
-      <input type="hidden" value="<%= approval.id %>" name="booking_id">
+    <form action="/approvals/<%= approval.id %>" method="post">
       <input type="hidden" value="approved" name="status">
       <button>Approve Now</button>
     </form>
